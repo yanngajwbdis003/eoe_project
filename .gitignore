@@ -1,0 +1,11 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+data/
+data_orig/
+.RDataTmp
+.RDataTmp1
+.DS_Store
+de_log.txt
+eoe_project.Rproj
