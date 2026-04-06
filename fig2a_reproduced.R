@@ -2,7 +2,9 @@
 library(dplyr)
 library(ggplot2)
 library(tidyr)
+library(data.table)
 
+metadata <- fread("EoE_meta.txt", fill = TRUE)
 # --- 2. AGGREGATE DATA TO PATIENT PROPORTIONS ---
 cell_counts <- metadata %>%
   filter(NAME != "TYPE") %>%
