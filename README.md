@@ -1,12 +1,13 @@
 # EoE Single-Cell RNA-seq Analysis
 
-Reproduction and extension of https://www.nature.com/articles/s41467-024-47647-0#Sec2 (Ding et al. 2024): **Gene programs changes in active EoE and normalization in remission.**
+Reproduction and extension of https://www.nature.com/articles/s41467-024-47647-0#Sec2 (Ding et al. 2024).
 
 ---
 
 ## Data
 
 orig source: https://singlecell.broadinstitute.org/single_cell/study/SCP1242/eoe-eosinophilic-esophagitis#study-download
+
 our processed data: https://drive.google.com/drive/folders/1JNF3krwtIS6jUbGPptXp2njbLXli91A_?usp=sharing
 
 | File                     | Description                                                                                                                 |
@@ -38,14 +39,7 @@ our processed data: https://drive.google.com/drive/folders/1JNF3krwtIS6jUbGPptXp
 | `fig2d.R`          | Reproduces Figure 2d. (PCA Biplot, Dual-panel)                                                                                                                                 |
 | `fig5a_b.R`        | Reproduces Fig. 5a (pairwise log2FC scatter plots) and Fig. 5b (GO BP enrichment heatmap)                                                                                      |
 | `figure5cde.R`     | Reproduces Fig. 5c (violin plots of key fibroblast genes), Fig. 5d (IL13RA2+ fibroblast fraction vs PC1), and Fig. 5e (Lasso regression)                                       |
+| `script.py`     | Script for running cNMF for full cell types, epi subsets                                       |
+| `cnmf.ipynb`     | notebook for processing the cnmf output, performing analysis                                      |
 
----
 
-### Known deviations from original
-
-| Deviation                                                 | Reason                                                                                             |
-| --------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| 20% stratified subsample instead of full dataset          | Local memory constraint (16GB RAM)                                                                 |
-| Only `nFeature_RNA_log2` as latent variable               | `loc` (biopsy region), `version` (10x version), `treat` (steroid) not available in public metadata |
-| `clusterProfiler` instead of `STRINGdb` for GO enrichment | STRINGdb API blocked by network                                                                    |
-| Fig. 5d shape (proximal/distal/mixed) not reproduced      | Biopsy location not in public metadata                                                             |
